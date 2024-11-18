@@ -1,5 +1,6 @@
 import { Route, Router, Routes } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import AllRecipes from './pages/AllRecipes'
 import AddRecipes from './pages/AddRecipes'
