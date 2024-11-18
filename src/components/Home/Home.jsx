@@ -4,25 +4,18 @@ import banner from "../../assets/images/banner2.jpg";
 function Home() {
   return (
     <div
-      className="relative bg-cover bg-center h-[100vh] w-full"
+      className="relative bg-cover bg-center h-[100vh] w-full flex items-center"
       style={{ backgroundImage: `url(${banner})` }}
     >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
 
-      {/* Heading */}
-      <div className="relative z-10 text-center">
-        <h1 className="text-white text-5xl font-bold font-montserrat ">
-          Welcome to KHAO-PEYO
-        </h1>
-      </div>
-
       {/* Content */}
-      <div className="relative z-10 flex justify-center items-center  space-x-4 font-montserrat">
-        <button className="bg-white text-black px-4 py-2 rounded">
+      <div className="relative z-10 flex font-montserrat justify-between w-full px-20">
+        <button className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black">
           View Recipe
         </button>
-        <button className="bg-white text-black px-4 py-2 rounded">
+        <button className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black">
           Add Recipe
         </button>
       </div>
