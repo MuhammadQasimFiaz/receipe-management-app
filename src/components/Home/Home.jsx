@@ -1,7 +1,10 @@
 import React from "react";
 import banner from "../../assets/images/banner2.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate()
+
   return (
     <div
       className="relative bg-cover bg-center h-[100vh] w-full flex items-center"
@@ -12,10 +15,10 @@ function Home() {
 
       {/* Content */}
       <div className="relative z-10 flex font-montserrat justify-between w-full px-20">
-        <button className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black">
+        <button className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black" onClick={() => navigate('/recipes')}>
           View Recipe
         </button>
-        <button className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black">
+        <button className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black" onClick={() => navigate('/add-recipe')}>
           Add Recipe
         </button>
       </div>

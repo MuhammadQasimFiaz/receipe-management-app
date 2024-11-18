@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; // Social icons from react-icons
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -12,18 +13,18 @@ function Header() {
 
         {/* Center: Navigation Links */}
         <nav className="flex space-x-6">
-          <a href="#home" className="hover:text-gray-400">
+          <Link to='/' className="hover:text-gray-400">
             Home
-          </a>
-          <a href="#recipes" className="hover:text-gray-400">
+          </Link>
+          <Link to='/recipes' className="hover:text-gray-400">
             Recipes
-          </a>
-          <a href="#about" className="hover:text-gray-400">
+          </Link>
+          <Link to='/about' className="hover:text-gray-400">
             About
-          </a>
-          <a href="#contact" className="hover:text-gray-400">
+          </Link>
+          <Link to='contact' className="hover:text-gray-400">
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Right: Social Icons */}
