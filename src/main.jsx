@@ -6,8 +6,12 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Home from './components/Home/Home.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
 import AddRecipes from './pages/AddRecipes'
+import RecipeList from './components/RecipeList/RecipeList.jsx'
 import About from './components/About/About.jsx'
 import Contact from './components/Contact/Contact.jsx'
+import AddRecipe from './components/AddRecipe/AddRecipe.jsx'
+import { Provider } from 'react-redux'
+import { store } from './app/store.js'
 
 
 const router = createBrowserRouter(
@@ -16,6 +20,8 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />}/>
       <Route path='recipes' element={<AllRecipes />} />
       <Route path='add-recipe' element={<AddRecipes />} />
+      <Route path='recipeList' element={<RecipeList />} />
+      <Route path='addRecipe' element={<AddRecipe />} />
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
     </Route>
@@ -25,6 +31,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )
