@@ -23,7 +23,7 @@ function AddRecipe() {
     <>
       <form
         onSubmit={addTodoHandler}
-        className="flex flex-col space-y-6 mt-12 max-w-md mx-auto p-6 bg-gray-800 rounded-lg shadow-lg"
+        className="flex flex-col space-y-6 w-full mx-auto p-[72px] bg-gray-800 shadow-lg h-screen"
       >
         <h2 className="text-2xl font-bold text-white text-center">
           Add a Recipe

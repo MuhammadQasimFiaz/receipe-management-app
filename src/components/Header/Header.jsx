@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-10 bg-transparent text-white p-4">
+    <header className="fixed top-0 left-0 right-0 z-10 text-white p-4 bg-black bg-opacity-40">
       <div className="flex justify-between items-center">
         {/* Left: Logo */}
         <div className="text-2xl font-bold">

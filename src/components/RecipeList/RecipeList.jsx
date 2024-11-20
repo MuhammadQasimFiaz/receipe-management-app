@@ -13,7 +13,7 @@ function RecipeList() {
 
   return (
     <>
-      <div className="bg-gray-900 p-6 rounded-lg shadow-lg max-w-6xl mx-auto mt-8">
+      <div className="bg-gray-900 px-6 pt-[72px] shadow-lg w-full mx-auto min-h-screen">
         <h1 className="text-3xl font-bold text-indigo-400 mb-8 text-center uppercase">
           Recipes
         </h1>
