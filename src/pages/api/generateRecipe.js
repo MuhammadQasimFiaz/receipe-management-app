@@ -25,7 +25,11 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch the recipe.");
+      const errorText = await response.text();
+      console.error("OpenAI API Error:", errorText);
+      return res
+        .status(response.status)
+        .json({ error: "Failed to fetch the recipe." });
     }
 
     const data = await response.json();
@@ -33,6 +37,7 @@ export default async function handler(req, res) {
       .status(200)
       .json({ recipe: data.choices[0]?.text.trim() || "No recipe found." });
   } catch (error) {
+    console.error("Server Error:", error.message);
     res.status(500).json({ error: "Something went wrong." });
   }
 }
