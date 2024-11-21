@@ -7,25 +7,40 @@ function Header() {
     <header className="fixed top-0 left-0 right-0 z-10 text-white p-4 bg-black bg-opacity-40">
       <div className="flex justify-between items-center">
         {/* Left: Logo */}
-        <div className="text-2xl font-bold">
-          <span>Logo</span>
+        <div className="font-montserrat text-2xl font-bold">
+          <span className="font-montserrat">Logo</span>
         </div>
 
         {/* Center: Navigation Links */}
         <nav className="flex space-x-6">
-          <Link to="/" className="peer text-white hover:text-white">
+          <Link
+            to="/"
+            className="peer text-white hover:text-white font-montserrat"
+          >
             Home
           </Link>
-          <Link to="/recipeList" className="peer text-white hover:text-white">
+          <Link
+            to="/recipeList"
+            className="peer text-white hover:text-white font-montserrat"
+          >
             Recipes
           </Link>
-          <Link to="/about" className="peer text-white hover:text-white">
+          <Link
+            to="/about"
+            className="peer text-white hover:text-white font-montserrat"
+          >
             About
           </Link>
-          <Link to="/contact" className="peer text-white hover:text-white">
+          <Link
+            to="/contact"
+            className="peer text-white hover:text-white font-montserrat"
+          >
             Contact
           </Link>
-          <Link to="/get-recipe" className="peer text-white hover:text-white">
+          <Link
+            to="/get-recipe"
+            className="peer text-white hover:text-white font-montserrat"
+          >
             Get Recipe
           </Link>
         </nav>

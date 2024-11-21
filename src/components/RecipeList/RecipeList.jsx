@@ -14,7 +14,7 @@ function RecipeList() {
   return (
     <>
       <div className="bg-gray-900 px-6 pt-[72px] shadow-lg w-full mx-auto min-h-screen">
-        <h1 className="text-3xl font-bold text-indigo-400 mb-8 text-center uppercase">
+        <h1 className="text-[45px] font-bold text-indigo-400 mb-8 text-center uppercase font-montserrat">
           Recipes
         </h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
