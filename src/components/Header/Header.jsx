@@ -13,19 +13,31 @@ function Header() {
 
         {/* Center: Navigation Links */}
         <nav className="flex space-x-6">
-          <Link to='/' className="hover:text-gray-400">
+          <Link to="/" className="peer text-white hover:text-white">
             Home
           </Link>
-          <Link to='/recipeList' className="hover:text-gray-400">
+          <Link to="/recipeList" className="peer text-white hover:text-white">
             Recipes
           </Link>
-          <Link to='/about' className="hover:text-gray-400">
+          <Link to="/about" className="peer text-white hover:text-white">
             About
           </Link>
-          <Link to='contact' className="hover:text-gray-400">
+          <Link to="/contact" className="peer text-white hover:text-white">
             Contact
           </Link>
+          <Link to="/ai" className="peer text-white hover:text-white">
+            AI
+          </Link>
         </nav>
+
+        {/* Add Sibling Behavior */}
+        <style>
+          {`
+            nav:hover > .peer:not(:hover) {
+              color: gray;
+            }
+          `}
+        </style>
 
         {/* Right: Social Icons */}
         <div className="flex space-x-4">
