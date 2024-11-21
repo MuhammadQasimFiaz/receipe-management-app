@@ -41,7 +41,7 @@ const AIGeneratedRecipes = () => {
   return (
     <div className="ai-generated-recipes">
       <h2 className="text-xl font-bold mb-4">AI-Generated Recipes</h2>
-      <div className="mb-4">
+      <div className="mb-5">
         <input
           type="text"
           placeholder="Enter recipe name"
