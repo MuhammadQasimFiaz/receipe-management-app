@@ -24,7 +24,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />} />
       <Route path="recipes" element={<AllRecipes />} />
-      <Route path="add-recipe" element={<AddRecipes />} />
+      {/* <Route path="add-recipe" element={<AddRecipes />} /> */}
       <Route path="recipeList" element={<RecipeList />} />
       <Route path="get-recipe" element={<AIGeneratedRecipes />} />
       <Route path="addRecipe" element={<AddRecipe />} />
