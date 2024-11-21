@@ -62,7 +62,7 @@ const AIGeneratedRecipes = () => {
           placeholder="Enter recipe name"
           value={recipeName}
           onChange={(e) => setRecipeName(e.target.value)}
-          className="border font-montserrat p-3 rounded-lg  w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-gray-700 border border-gray-600 font-montserrat p-3 rounded-lg  w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
           onClick={fetchRecipe}

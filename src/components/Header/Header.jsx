@@ -26,6 +26,18 @@ function Header() {
             Recipes
           </Link>
           <Link
+            to="/get-recipe"
+            className="peer text-white hover:text-white font-montserrat"
+          >
+            Get Recipe
+          </Link>
+          <Link
+            to="/addRecipe"
+            className="peer text-white hover:text-white font-montserrat"
+          >
+            Add Recipe
+          </Link>
+          <Link
             to="/about"
             className="peer text-white hover:text-white font-montserrat"
           >
@@ -36,12 +48,6 @@ function Header() {
             className="peer text-white hover:text-white font-montserrat"
           >
             Contact
-          </Link>
-          <Link
-            to="/get-recipe"
-            className="peer text-white hover:text-white font-montserrat"
-          >
-            Get Recipe
           </Link>
         </nav>
 

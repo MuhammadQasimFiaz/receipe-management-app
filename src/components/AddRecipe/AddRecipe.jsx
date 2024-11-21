@@ -10,12 +10,14 @@ function AddRecipe() {
   const addTodoHandler = (e) => {
     e.preventDefault();
     if (input) {
-      dispatch(addRecipe({
-        title: input,
-        description: inputDescription
-      }));
+      dispatch(
+        addRecipe({
+          title: input,
+          description: inputDescription,
+        })
+      );
       setInput("");
-      setInputDescription('')
+      setInputDescription("");
     }
   };
 
@@ -25,7 +27,7 @@ function AddRecipe() {
         onSubmit={addTodoHandler}
         className="flex flex-col space-y-6 w-full mx-auto p-[72px] bg-gray-800 shadow-lg h-screen"
       >
-        <h2 className="text-2xl font-bold text-white text-center">
+        <h2 className="text-[45px] font-bold text-indigo-400 mb-8 text-center uppercase font-montserrat">
           Add a Recipe
         </h2>
 
