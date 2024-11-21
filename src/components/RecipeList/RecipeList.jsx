@@ -1,15 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteRecipe } from "../../features/recipe/recipeSlice";
+import { deleteRecipe, updateRecipe } from "../../features/recipe/recipeSlice";
 
 function RecipeList() {
   const recipes = useSelector((state) => state.recipes || []);
   const dispatch = useDispatch();
-  console.log("recipes", recipes);
+  // console.log("recipes", recipes);
+  const [editRecipeId, setEditRecipeId] = useState(null)
+  const [editTitle, setEditTitle] = useState('')
+  const [editDescription, setEditDescription] = useState('')
 
   useEffect(() => {
     localStorage.setItem("recipes", JSON.stringify(recipes));
   }, [recipes]);
+
+  const handleUpdate = (e) => {
+    e.preventDefault()
+    dispatch(updateRecipe({
+      id: editRecipeId,
+      title: editTitle,
+      description: editDescription
+    }))
+    // Exit update mode
+    setEditRecipeId(null);
+    setEditTitle("");
+    setEditDescription("");
+  }
 
   return (
     <>
@@ -23,6 +39,39 @@ function RecipeList() {
               className="flex flex-col bg-gray-800 p-4 rounded-lg shadow hover:bg-gray-700 transition duration-200"
               key={recipe.id}
             >
+              {editRecipeId === recipe.id ? (
+              <form onSubmit={handleUpdate} className="space-y-4">
+                <div>
+                  <label className="block text-white font-semibold">
+                    Title:
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
+                    value={editTitle}
+                    onChange={(e) => setEditTitle(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label className="block text-white font-semibold">
+                    Ingredients:
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
+                    value={editDescription}
+                    onChange={(e) => setEditDescription(e.target.value)}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700"
+                >
+                  Save
+                </button>
+              </form>
+            ) : (
+              <>
               <div className="mb-4">
                 <h3 className="text-xl font-semibold text-white">Title</h3>
                 <p className="text-lg text-gray-300">{recipe.title}</p>
@@ -35,10 +84,22 @@ function RecipeList() {
               </div>
               <button
                 className="mt-auto text-sm text-indigo-500 hover:underline self-end"
+                onClick={() => {
+                  setEditRecipeId(recipe.id)
+                  setEditTitle(recipe.title)
+                  setEditDescription(recipe.description)
+                }}
+              >
+                Update
+              </button>
+              <button
+                className="mt-auto text-sm text-indigo-500 hover:underline self-end"
                 onClick={() => dispatch(deleteRecipe(recipe.id))}
               >
                 Delete
               </button>
+              </>
+            ) }
             </li>
           ))}
         </ul>
