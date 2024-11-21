@@ -25,8 +25,8 @@ function Header() {
           <Link to="/contact" className="peer text-white hover:text-white">
             Contact
           </Link>
-          <Link to="/ai" className="peer text-white hover:text-white">
-            AI
+          <Link to="/get-recipe" className="peer text-white hover:text-white">
+            Get Recipe
           </Link>
         </nav>
 

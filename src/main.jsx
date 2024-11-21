@@ -26,7 +26,7 @@ const router = createBrowserRouter(
       <Route path="recipes" element={<AllRecipes />} />
       <Route path="add-recipe" element={<AddRecipes />} />
       <Route path="recipeList" element={<RecipeList />} />
-      <Route path="ai" element={<AIGeneratedRecipes />} />
+      <Route path="get-recipe" element={<AIGeneratedRecipes />} />
       <Route path="addRecipe" element={<AddRecipe />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
