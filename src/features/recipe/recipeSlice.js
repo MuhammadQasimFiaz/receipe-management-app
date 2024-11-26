@@ -24,12 +24,24 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     addRecipe: (state, action) => {
-      const { title, description, imageUrl } = action.payload;
+      const {
+        title,
+        description,
+        imageUrl,
+        servings,
+        readyIn,
+        instructions,
+        ingredients,
+      } = action.payload;
       const recipe = {
         id: nanoid(),
         title: title,
         description: description,
         imageUrl: imageUrl,
+        servings: servings,
+        readyIn: readyIn,
+        instructions: instructions,
+        ingredients: ingredients,
       };
       state.recipes.push(recipe);
     },

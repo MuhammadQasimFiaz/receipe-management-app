@@ -78,7 +78,36 @@ function RecipeList() {
                     <h3 className="text-xl font-semibold text-white">Title</h3>
                     <p className="text-lg text-gray-300">{recipe.title}</p>
                   </div>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-semibold text-white">
+                      Servings
+                    </h3>
+                    <p className="text-lg text-gray-300">{recipe.servings}</p>
+                  </div>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-semibold text-white">
+                      ReadyIn Minutes
+                    </h3>
+                    <p className="text-lg text-gray-300">{recipe.readyIn}</p>
+                  </div>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-semibold text-white">
+                      Ingredients
+                    </h3>
+                    <p className="text-lg text-gray-300">
+                      {recipe.ingredients}
+                    </p>
+                  </div>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-semibold text-white">
+                      Instructions
+                    </h3>
+                    <p className="text-lg text-gray-300">
+                      {recipe.instructions}
+                    </p>
+                  </div>
                   <div>
+                    <h3 className="text-xl font-semibold text-white">Image</h3>
                     <img src={recipe.imageUrl} alt="recipe image" />
                   </div>
                   <div className="mb-4">

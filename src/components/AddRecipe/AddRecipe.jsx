@@ -6,6 +6,10 @@ function AddRecipe() {
   const [input, setInput] = useState("");
   const [inputDescription, setInputDescription] = useState("");
   const [image, setImage] = useState(null);
+  const [inputServings, setInputServings] = useState("");
+  const [inputreadyIn, setInputReadyIn] = useState("");
+  const [inputinstructions, setInputInstructions] = useState("");
+  const [inputingredients, setInputIngredients] = useState("");
   const dispatch = useDispatch();
 
   const handleImageChange = (e) => {
@@ -24,11 +28,17 @@ function AddRecipe() {
           title: input,
           description: inputDescription,
           imageUrl: image,
+          servings: inputServings,
+          readyIn: inputreadyIn,
+          instructions: inputinstructions,
+          ingredients: inputingredients,
         })
       );
       setInput("");
       setInputDescription("");
-      setImage(null);
+      setInputServings("");
+      setInputReadyIn("");
+      setInputInstructions(""), setInputIngredients(""), setImage(null);
     }
   };
 
@@ -45,16 +55,48 @@ function AddRecipe() {
         <div className="w-[50%] mx-auto">
           <input
             type="text"
-            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full"
-            placeholder="Enter a Recipe title..."
+            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
+            placeholder="Enter a Recipe Title"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
+            placeholder="Enter number of Servings"
+            value={inputServings}
+            onChange={(e) => setInputServings(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
+            placeholder="Enter Time ReadyIn"
+            value={inputreadyIn}
+            onChange={(e) => setInputReadyIn(e.target.value)}
+            required
+          />
+          <textarea
+            type="text"
+            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
+            placeholder="Enter Ingredients in points"
+            value={inputingredients}
+            onChange={(e) => setInputIngredients(e.target.value)}
+            required
+          />
+          <textarea
+            type="text"
+            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
+            placeholder="Enter Instructions in points"
+            value={inputinstructions}
+            onChange={(e) => setInputInstructions(e.target.value)}
             required
           />
 
           <textarea
             type="text"
-            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full my-5"
+            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
             placeholder="Enter a Recipe Summary"
             value={inputDescription}
             onChange={(e) => setInputDescription(e.target.value)}
@@ -64,8 +106,9 @@ function AddRecipe() {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out w-full"
+            className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out w-full mb-5"
           />
+
           {image && (
             <div className="mt-4">
               <img
@@ -77,7 +120,7 @@ function AddRecipe() {
           )}
           <button
             type="submit"
-            className="bg-indigo-600 text-white py-3 px-6 rounded-lg shadow hover:bg-indigo-700 transition duration-200 ease-in-out w-full"
+            className="bg-indigo-600 text-white  py-3 px-6 rounded-lg shadow hover:bg-indigo-700 transition duration-200 ease-in-out w-full"
           >
             Add Recipe
           </button>

@@ -52,7 +52,7 @@ const AIGeneratedRecipes = () => {
   };
 
   return (
-    <div className="pt-[72px] ai-generated-recipes w-full  h-screen bg-gray-900">
+    <div className="pt-[72px] ai-generated-recipes w-full bg-gray-900 pb-10">
       <h2 className="text-[45px] font-bold text-indigo-400 mb-8 text-center uppercase font-montserrat">
         Get Recipe
       </h2>
@@ -62,11 +62,11 @@ const AIGeneratedRecipes = () => {
           placeholder="Enter recipe name"
           value={recipeName}
           onChange={(e) => setRecipeName(e.target.value)}
-          className="bg-gray-700 border border-gray-600 font-montserrat p-3 rounded-lg  w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-gray-700 border border-gray-600 text-white font-montserrat p-3 rounded-lg  w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
           onClick={fetchRecipe}
-          className="bg-blue-600 font-montserrat text-white px-6 py-3 rounded-lg shadow-md w-full hover:bg-blue-700 disabled:bg-gray-300 mt-5"
+          className="bg-indigo-400 font-montserrat text-white px-6 py-3 rounded-lg shadow-md w-full hover:bg-blue-700 disabled:bg-gray-300 mt-5"
           disabled={loading}
         >
           {loading ? "Generating..." : "Generate Recipe"}
@@ -76,33 +76,52 @@ const AIGeneratedRecipes = () => {
       {error && <p className="text-red-500 text-center mt-4">{error}</p>}
 
       {recipeDetails && (
-        <div className="mt-8 bg-white p-6 rounded-lg shadow-xl">
-          <h3 className="font-montserrat text-3xl font-bold text-center mb-10">
+        <div className="mt-8 bg-white p-6 rounded-lg shadow-xl w-[50%] m-auto px-14 ">
+          <h3 className="font-montserrat text-3xl font-bold text-center  mb-10  underline underline-offset-8 decoration-wavy decoration-indigo-400 decoration-4">
             {recipeDetails.title}
           </h3>
-          <div className="flex gap-10 items-center">
-            <div className="w-[50%]">
-              <img
-                src={recipeDetails.image}
-                alt={recipeDetails.title}
-                className="w-full h-64 object-cover rounded-lg mb-6"
-              />
-            </div>
+
+          <div className="w-full pt-10 pb-10">
+            <img
+              src={recipeDetails.image}
+              alt={recipeDetails.title}
+              className="w-full h-64 object-cover rounded-lg mb-6"
+            />
+          </div>
+          <div className="flex">
             <div className=" w-[50%]">
               <h4 className="font-montserrat text-xl font-semibold mb-3">
                 Ingredients:
               </h4>
-              <ul className="font-montserrat list-disc pl-5 text-gray-700">
+              <ul className="font-montserrat list-disc pl-5 text-gray-700 pb-20">
                 {recipeDetails.extendedIngredients.map((ingredient, index) => (
                   <li key={index}>{ingredient.original}</li>
                 ))}
               </ul>
             </div>
+            <div className=" flex gap-10 flex-col w-[50%] text-end">
+              <div>
+                <h4 className="font-montserrat text-xl font-semibold">
+                  Servings:
+                </h4>
+                <p className="font-montserrat text-gray-700">
+                  {recipeDetails.servings} servings
+                </p>
+              </div>
+              <div>
+                <h4 className="font-montserrat text-xl font-semibold">
+                  Ready in:
+                </h4>
+                <p className="font-montserrat text-gray-700">
+                  {recipeDetails.readyInMinutes} minutes
+                </p>
+              </div>
+            </div>
           </div>
           <div className="mb-6">
             {/* Render summary with raw HTML tags */}
             <p
-              className="font-montserrat text-gray-700 text-lg"
+              className="font-montserrat text-gray-700 text-lg text-justify"
               dangerouslySetInnerHTML={{
                 __html: recipeDetails.summary,
               }}
@@ -119,24 +138,6 @@ const AIGeneratedRecipes = () => {
                 )
               )}
             </ol>
-          </div>
-          <div className="mb-6 flex justify-between items-center">
-            <div>
-              <h4 className="font-montserrat text-xl font-semibold">
-                Servings:
-              </h4>
-              <p className="font-montserrat text-gray-700">
-                {recipeDetails.servings} servings
-              </p>
-            </div>
-            <div>
-              <h4 className="font-montserrat text-xl font-semibold">
-                Ready in:
-              </h4>
-              <p className="font-montserrat text-gray-700">
-                {recipeDetails.readyInMinutes} minutes
-              </p>
-            </div>
           </div>
         </div>
       )}
