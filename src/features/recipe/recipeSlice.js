@@ -5,6 +5,7 @@ const loadFromLocalStorage = () => {
     const savedRecipes = localStorage.getItem("recipes");
     if (savedRecipes) {
       const parsedRecipes = JSON.parse(savedRecipes);
+      console.log('Loaded recipes from localStorage:', parsedRecipes);
       if (Array.isArray(parsedRecipes)) {
         return parsedRecipes;
       }
@@ -33,6 +34,7 @@ export const counterSlice = createSlice({
         instructions,
         ingredients,
       } = action.payload;
+      console.log('Adding', { title, description, imageUrl, servings, readyIn, instructions, ingredients })
       const recipe = {
         id: nanoid(),
         title: title,

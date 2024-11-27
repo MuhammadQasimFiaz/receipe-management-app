@@ -38,7 +38,7 @@ function AddRecipe() {
       setInputDescription("");
       setInputServings("");
       setInputReadyIn("");
-      setInputInstructions(""), setInputIngredients(""), setImage(null);
+      setInputInstructions(""), setInputIngredients(""), setImage('');
     }
   };
 
