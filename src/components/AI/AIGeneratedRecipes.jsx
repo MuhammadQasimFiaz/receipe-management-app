@@ -52,7 +52,7 @@ const AIGeneratedRecipes = () => {
   };
 
   return (
-    <div className="pt-[72px] ai-generated-recipes w-full bg-gray-900 pb-10">
+    <div className="pt-[72px] ai-generated-recipes w-full bg-gray-900 pb-10 min-h-screen">
       <h2 className="text-[45px] font-bold text-indigo-400 mb-8 text-center uppercase font-montserrat">
         Get Recipe
       </h2>

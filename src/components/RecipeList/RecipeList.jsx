@@ -9,6 +9,11 @@ function RecipeList() {
   const [editRecipeId, setEditRecipeId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
+  const [editImage, setEditImage] = useState(null)
+  const [editServing, setEditServing] = useState('')
+  const [editReadyIn, setEditReadyIn] = useState('')
+  const [editInstructions, setEditInstructions] = useState('')
+  const [editIngredients, setEditIngredients] = useState('')
 
   useEffect(() => {
     localStorage.setItem("recipes", JSON.stringify(recipes));
@@ -21,12 +26,25 @@ function RecipeList() {
         id: editRecipeId,
         title: editTitle,
         description: editDescription,
+        imageUrl: editImage,
+        servings: editServing,
+        readyIn: editReadyIn,
+        instructions: editInstructions,
+        ingredients: editIngredients
       })
     );
     // Exit update mode
     setEditRecipeId(null);
     setEditTitle("");
     setEditDescription("");
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setEditImage(imageUrl);
+    }
   };
 
   return (
@@ -56,6 +74,18 @@ function RecipeList() {
                   </div>
                   <div>
                     <label className="block text-white font-semibold">
+                      Image:
+                    </label>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
+                      value={editImage}
+                      onChange={handleImageChange}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold">
                       Summary:
                     </label>
                     <input
@@ -63,6 +93,50 @@ function RecipeList() {
                       className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
                       value={editDescription}
                       onChange={(e) => setEditDescription(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold">
+                      Servings:
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
+                      value={editServing}
+                      onChange={(e) => setEditServing(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold">
+                      Ready in minutes:
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
+                      value={editReadyIn}
+                      onChange={(e) => setEditReadyIn(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold">
+                      Instructions:
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
+                      value={editInstructions}
+                      onChange={(e) => setEditInstructions(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold">
+                      Ingredients:
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
+                      value={editIngredients}
+                      onChange={(e) => setEditIngredients(e.target.value)}
                     />
                   </div>
                   <button
@@ -98,7 +172,7 @@ function RecipeList() {
                   </div>
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-white">
-                      ReadyIn Minutes
+                      Ready in Minutes
                     </h3>
                     <p className="text-lg text-gray-300">{recipe.readyIn}</p>
                   </div>

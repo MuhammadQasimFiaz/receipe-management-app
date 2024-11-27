@@ -72,7 +72,7 @@ function AddRecipe() {
           <input
             type="text"
             className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
-            placeholder="Enter Time ReadyIn"
+            placeholder="Enter Time Ready in minutes"
             value={inputreadyIn}
             onChange={(e) => setInputReadyIn(e.target.value)}
             required
