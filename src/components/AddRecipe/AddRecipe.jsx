@@ -30,8 +30,8 @@ function AddRecipe() {
           imageUrl: image,
           servings: inputServings,
           readyIn: inputreadyIn,
-          instructions: inputinstructions,
-          ingredients: inputingredients,
+          instructions: inputinstructions.split("\n"),
+          ingredients: inputingredients.split("\n"),
         })
       );
       setInput("");

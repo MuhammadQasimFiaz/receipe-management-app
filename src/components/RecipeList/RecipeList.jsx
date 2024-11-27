@@ -78,6 +78,18 @@ function RecipeList() {
                     <h3 className="text-xl font-semibold text-white">Title</h3>
                     <p className="text-lg text-gray-300">{recipe.title}</p>
                   </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Image</h3>
+                    <img src={recipe.imageUrl} alt="recipe image" />
+                  </div>
+                  <div className="mb-4">
+                    <h4 className="text-lg font-semibold text-white">
+                      Summary
+                    </h4>
+                    <p className="text-base text-gray-400">
+                      {recipe.description}
+                    </p>
+                  </div>
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-white">
                       Servings
@@ -94,30 +106,36 @@ function RecipeList() {
                     <h3 className="text-xl font-semibold text-white">
                       Ingredients
                     </h3>
-                    <p className="text-lg text-gray-300">
-                      {recipe.ingredients}
-                    </p>
+                    {Array.isArray(recipe.ingredients) ? (
+                      <ul className="text-lg text-gray-300 list-disc list-inside">
+                        {recipe.ingredients.map((ingredient, index) => (
+                          <li key={index}>{ingredient}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-lg text-gray-300">
+                        {recipe.ingredients}
+                      </p>
+                    )}
                   </div>
+
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-white">
                       Instructions
                     </h3>
-                    <p className="text-lg text-gray-300">
-                      {recipe.instructions}
-                    </p>
+                    {Array.isArray(recipe.instructions) ? (
+                      <ol className="text-lg text-gray-300 list-decimal list-inside">
+                        {recipe.instructions.map((instruction, index) => (
+                          <li key={index}>{instruction}</li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <p className="text-lg text-gray-300">
+                        {recipe.instructions}
+                      </p>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">Image</h3>
-                    <img src={recipe.imageUrl} alt="recipe image" />
-                  </div>
-                  <div className="mb-4">
-                    <h4 className="text-lg font-semibold text-white">
-                      Summary
-                    </h4>
-                    <p className="text-base text-gray-400">
-                      {recipe.description}
-                    </p>
-                  </div>
+
                   <button
                     className="mt-auto text-sm text-indigo-500 hover:underline self-end"
                     onClick={() => {

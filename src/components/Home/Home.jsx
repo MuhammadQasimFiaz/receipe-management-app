@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useMemo } from "react";
 import banner from "../../assets/images/banner2.jpg";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
 
+  const backgroundStyle = useMemo(() => {
+    return { backgroundImage: `url(${banner})` };
+  }, []);
   return (
     <div
       className="relative bg-cover bg-center h-[100vh] w-full flex items-center"
-      style={{ backgroundImage: `url(${banner})` }}
+      style={backgroundStyle}
     >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
