@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; // Social icons from react-icons
 import { Link } from "react-router-dom";
 
 function Header() {
+  const [bgColor, setBgColor] = useState("bg-transparent");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setBgColor("bg-indigo-400"); // Apply the bg color (#818cf8 is equivalent to indigo-400 in Tailwind)
+      } else {
+        setBgColor("bg-transparent"); // Revert back to transparent
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-10 text-white p-4 bg-black bg-opacity-40">
+    <header
+      className={`fixed top-0 left-0 right-0 z-10 text-white p-4 transition-colors duration-300 ${bgColor}`}
+    >
       <div className="flex justify-between items-center">
         {/* Left: Logo */}
         <div className="font-montserrat text-2xl font-bold">

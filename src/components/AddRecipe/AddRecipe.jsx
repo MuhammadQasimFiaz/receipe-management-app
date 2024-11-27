@@ -6,8 +6,8 @@ function AddRecipe() {
   const [input, setInput] = useState("");
   const [inputDescription, setInputDescription] = useState("");
   const [image, setImage] = useState(null);
-  const [inputServings, setInputServings] = useState("");
-  const [inputreadyIn, setInputReadyIn] = useState("");
+  const [inputServings, setInputServings] = useState(0);
+  const [inputreadyIn, setInputReadyIn] = useState(0);
   const [inputinstructions, setInputInstructions] = useState("");
   const [inputingredients, setInputIngredients] = useState("");
   const dispatch = useDispatch();
@@ -53,6 +53,7 @@ function AddRecipe() {
         </h2>
 
         <div className="w-[50%] mx-auto">
+          <label className="block text-white font-semibold">Title:</label>
           <input
             type="text"
             className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
@@ -61,22 +62,27 @@ function AddRecipe() {
             onChange={(e) => setInput(e.target.value)}
             required
           />
+          <label className="block text-white font-semibold">Servings:</label>
           <input
-            type="text"
+            type="number"
             className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
             placeholder="Enter number of Servings"
             value={inputServings}
             onChange={(e) => setInputServings(e.target.value)}
             required
           />
+          <label className="block text-white font-semibold">
+            Ready in minutes:
+          </label>
           <input
-            type="text"
+            type="number"
             className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
             placeholder="Enter Time Ready in minutes"
             value={inputreadyIn}
             onChange={(e) => setInputReadyIn(e.target.value)}
             required
           />
+          <label className="block text-white font-semibold">Ingredients:</label>
           <textarea
             type="text"
             className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
@@ -85,6 +91,9 @@ function AddRecipe() {
             onChange={(e) => setInputIngredients(e.target.value)}
             required
           />
+          <label className="block text-white font-semibold">
+            Instructions:
+          </label>
           <textarea
             type="text"
             className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
@@ -93,7 +102,7 @@ function AddRecipe() {
             onChange={(e) => setInputInstructions(e.target.value)}
             required
           />
-
+          <label className="block text-white font-semibold">Summary:</label>
           <textarea
             type="text"
             className="bg-gray-700 rounded border border-gray-600 text-gray-100 py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-200 ease-in-out placeholder:text-gray-400 w-full mb-5"
@@ -102,6 +111,7 @@ function AddRecipe() {
             onChange={(e) => setInputDescription(e.target.value)}
             required
           />
+          <label className="block text-white font-semibold">Image:</label>
           <input
             type="file"
             accept="image/*"
