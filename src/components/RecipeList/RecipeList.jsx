@@ -50,7 +50,7 @@ function RecipeList() {
   return (
     <>
       <div className="bg-gray-900 px-6 pt-[72px] shadow-lg w-full mx-auto min-h-screen">
-        <h1 className="text-[45px] font-bold text-indigo-400 mb-8 text-center uppercase font-montserrat">
+        <h1 className="text-[45px] font-bold text-[#a16925] mb-8 text-center uppercase font-montserrat">
           Recipes
         </h1>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -211,7 +211,7 @@ function RecipeList() {
                   </div>
 
                   <button
-                    className="mt-auto text-sm my-4 font-semibold text-white bg-orange-500 px-4 py-2 rounded-lg shadow hover:bg-orange-600 hover:scale-105 transition duration-200 ease-in-out flex items-center justify-center"
+                    className="mt-auto text-sm my-4 font-semibold text-white bg-[#a16925] px-4 py-2 rounded-lg shadow  hover:scale-105 transition duration-200 ease-in-out flex items-center justify-center"
                     onClick={() => {
                       setEditRecipeId(recipe.id);
                       setEditTitle(recipe.title);

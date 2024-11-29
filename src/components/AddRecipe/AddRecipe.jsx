@@ -48,7 +48,7 @@ function AddRecipe() {
         onSubmit={addTodoHandler}
         className="flex flex-col space-y-6 w-full mx-auto p-[72px] bg-gray-900 shadow-lg min-h-screen"
       >
-        <h2 className="text-[45px] font-bold text-indigo-400 mb-8 text-center uppercase font-montserrat">
+        <h2 className="text-[45px] font-bold text-[#a16925] mb-8 text-center uppercase font-montserrat">
           Add a Recipe
         </h2>
 
@@ -130,7 +130,7 @@ function AddRecipe() {
           )}
           <button
             type="submit"
-            className="bg-indigo-600 text-white  py-3 px-6 rounded-lg shadow hover:bg-indigo-700 transition duration-200 ease-in-out w-full"
+            className="bg-[#a16925] text-white  py-3 px-6 rounded-lg shadow hover:bg-indigo-700 transition duration-200 ease-in-out w-full"
           >
             Add Recipe
           </button>

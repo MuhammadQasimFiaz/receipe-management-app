@@ -8,7 +8,7 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setBgColor("bg-indigo-400"); // Apply the bg color (#818cf8 is equivalent to indigo-400 in Tailwind)
+        setBgColor("bg-[#a16925]"); // Apply the bg color (#818cf8 is equivalent to indigo-400 in Tailwind)
       } else {
         setBgColor("bg-transparent"); // Revert back to transparent
       }
@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-10 text-white p-4 transition-colors duration-300 ${bgColor}`}
+      className={`fixed top-0 left-0 right-0 z-10 text-white font-semibold p-4 transition-colors duration-300 ${bgColor}`}
     >
       <div className="flex justify-between items-center">
         {/* Left: Logo */}
@@ -29,40 +29,40 @@ function Header() {
         </div>
 
         {/* Center: Navigation Links */}
-        <nav className="flex space-x-6">
+        <nav className="flex space-x-10 ">
           <Link
             to="/"
-            className="peer text-white hover:text-white font-montserrat"
+            className="peer text-white hover:text-white font-montserrat hover:scale-105"
           >
             Home
           </Link>
           <Link
             to="/recipeList"
-            className="peer text-white hover:text-white font-montserrat"
+            className="peer text-white hover:text-white font-montserrat hover:scale-105"
           >
             Recipes
           </Link>
           <Link
             to="/get-recipe"
-            className="peer text-white hover:text-white font-montserrat"
+            className="peer text-white hover:text-white font-montserrat hover:scale-105"
           >
             Get Recipe
           </Link>
           <Link
             to="/addRecipe"
-            className="peer text-white hover:text-white font-montserrat"
+            className="peer text-white hover:text-white font-montserrat hover:scale-105"
           >
             Add Recipe
           </Link>
           <Link
             to="/about"
-            className="peer text-white hover:text-white font-montserrat"
+            className="peer text-white hover:text-white font-montserrat hover:scale-105"
           >
             About
           </Link>
           <Link
             to="/contact"
-            className="peer text-white hover:text-white font-montserrat"
+            className="peer text-white hover:text-white font-montserrat hover:scale-105"
           >
             Contact
           </Link>
@@ -84,21 +84,21 @@ function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFacebook className="text-2xl hover:text-gray-400" />
+            <FaFacebook className="text-2xl hover:text-blue-500 hover:scale-125" />
           </a>
           <a
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaTwitter className="text-2xl hover:text-gray-400" />
+            <FaTwitter className="text-2xl hover:text-gray-600 hover:scale-125" />
           </a>
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="text-2xl hover:text-gray-400" />
+            <FaInstagram className="text-2xl hover:text-pink-500 hover:scale-125" />
           </a>
         </div>
       </div>

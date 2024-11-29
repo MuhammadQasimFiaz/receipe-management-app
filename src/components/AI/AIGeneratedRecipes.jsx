@@ -53,7 +53,7 @@ const AIGeneratedRecipes = () => {
 
   return (
     <div className="pt-[72px] ai-generated-recipes w-full bg-gray-900 pb-10 min-h-screen">
-      <h2 className="text-[45px] font-bold text-indigo-400 mb-8 text-center uppercase font-montserrat">
+      <h2 className="text-[45px] font-bold text-[#a16925] mb-8 text-center uppercase font-montserrat">
         Get Recipe
       </h2>
       <div className="mb-6 mx-auto w-[50%] ">
@@ -66,7 +66,7 @@ const AIGeneratedRecipes = () => {
         />
         <button
           onClick={fetchRecipe}
-          className="bg-indigo-400 font-montserrat text-white px-6 py-3 rounded-lg shadow-md w-full hover:bg-blue-700 disabled:bg-gray-300 mt-5"
+          className="bg-[#a16925] font-montserrat text-white px-6 py-3 rounded-lg shadow-md w-full  disabled:bg-gray-300 mt-5"
           disabled={loading}
         >
           {loading ? "Generating..." : "Generate Recipe"}

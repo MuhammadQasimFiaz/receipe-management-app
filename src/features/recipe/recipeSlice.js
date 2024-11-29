@@ -51,16 +51,25 @@ export const counterSlice = createSlice({
       );
     },
     updateRecipe: (state, action) => {
-      const { id, title, description, imageUrl, servings, readyIn, instructions, ingredients } = action.payload;
+      const {
+        id,
+        title,
+        description,
+        imageUrl,
+        servings,
+        readyIn,
+        instructions,
+        ingredients,
+      } = action.payload;
       const recipe = state.recipes.find((recipe) => recipe.id === id);
       if (recipe) {
         if (title) recipe.title = title;
         if (description) recipe.description = description;
-        if (imageUrl) recipe.imageUrl = imageUrl
-        if (servings) recipe.servings = servings
-        if (readyIn) recipe.readyIn = readyIn
-        if (instructions) recipe.instructions = instructions
-        if (ingredients) recipe.ingredients = ingredients
+        if (imageUrl) recipe.imageUrl = imageUrl;
+        if (servings) recipe.servings = servings;
+        if (readyIn) recipe.readyIn = readyIn;
+        if (instructions) recipe.instructions = instructions;
+        if (ingredients) recipe.ingredients = ingredients;
       }
     },
   },

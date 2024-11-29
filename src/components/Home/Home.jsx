@@ -19,13 +19,13 @@ function Home() {
       {/* Content */}
       <div className="relative z-10 flex font-montserrat justify-between w-full px-20">
         <button
-          className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black"
+          className=" text-white bg-[#a16925] px-4 py-2 rounded transition duration-300 hover:scale-95"
           onClick={() => navigate("/recipeList")}
         >
           View Recipe
         </button>
         <button
-          className="bg-transparent border border-white text-white px-4 py-2 rounded transition duration-300 hover:bg-white hover:text-black"
+          className=" text-white bg-[#a16925] px-4 py-2 rounded transition duration-300 hover:scale-95 "
           onClick={() => navigate("/addRecipe")}
         >
           Add Recipe
