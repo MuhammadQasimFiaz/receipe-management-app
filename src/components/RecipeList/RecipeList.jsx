@@ -69,7 +69,7 @@ function RecipeList() {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold">
+                    <label className="block text-white font-semibold mb-2">
                       Image:
                     </label>
                     <input
@@ -142,13 +142,13 @@ function RecipeList() {
                   </button>
                 </form>
               ) : (
-                <>
+                <div className="p-5">
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-white">Title</h3>
                     <p className="text-lg text-gray-300">{recipe.title}</p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white">Image</h3>
+                    <h3 className="text-xl font-semibold text-white mb-2">Image</h3>
                     <img src={recipe.imageUrl} alt="recipe image" />
                   </div>
                   <div className="mb-4">
@@ -205,49 +205,51 @@ function RecipeList() {
                     )}
                   </div>
 
-                  <button
-                    className="mt-auto text-sm my-4 font-semibold text-white bg-[#a16925] px-4 py-2 rounded-lg shadow  hover:scale-105 transition duration-200 ease-in-out flex items-center justify-center"
-                    onClick={() => {
-                      setEditRecipeId(recipe.id);
-                      setEditTitle(recipe.title);
-                      setEditDescription(recipe.description);
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
+                  <div className="flex justify-center gap-5">
+                    <button
+                      className="w-[50%] text-sm font-semibold text-white bg-[#a16925] py-2 rounded-lg shadow  hover:scale-105 transition duration-200 ease-in-out flex items-center justify-center"
+                      onClick={() => {
+                        setEditRecipeId(recipe.id);
+                        setEditTitle(recipe.title);
+                        setEditDescription(recipe.description);
+                      }}
                     >
-                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M5 13.5V17h3.5l8.485-8.485a3 3 0 00-4.243-4.243L5 13.5zm11.707-10.707a4 4 0 10-5.657 5.657l-1.415 1.414a1 1 0 00-.293.707V15a1 1 0 001 1h2.829a1 1 0 00.707-.293l1.414-1.414a4 4 0 005.657-5.657l-1.414-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Update Recipe
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mr-2"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                        <path
+                          fillRule="evenodd"
+                          d="M5 13.5V17h3.5l8.485-8.485a3 3 0 00-4.243-4.243L5 13.5zm11.707-10.707a4 4 0 10-5.657 5.657l-1.415 1.414a1 1 0 00-.293.707V15a1 1 0 001 1h2.829a1 1 0 00.707-.293l1.414-1.414a4 4 0 005.657-5.657l-1.414-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      Update Recipe
+                    </button>
 
-                  <button
-                    className="text-sm font-semibold text-white bg-red-500 px-4 py-2 rounded-lg shadow hover:bg-red-600 hover:scale-105 transition duration-200 ease-in-out flex items-center justify-center"
-                    onClick={() => dispatch(deleteRecipe(recipe.id))}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
+                    <button
+                      className="w-[50%] text-sm font-semibold text-white bg-red-500 py-2 rounded-lg shadow hover:bg-red-600 hover:scale-105 transition duration-200 ease-in-out flex items-center justify-center"
+                      onClick={() => dispatch(deleteRecipe(recipe.id))}
                     >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 4a1 1 0 00-1 1v1h10V5a1 1 0 00-1-1H6zM4 7h12v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Delete Recipe
-                  </button>
-                </>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mr-2"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6 4a1 1 0 00-1 1v1h10V5a1 1 0 00-1-1H6zM4 7h12v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      Delete Recipe
+                    </button>
+                  </div>
+                </div>
               )}
             </li>
           ))}
