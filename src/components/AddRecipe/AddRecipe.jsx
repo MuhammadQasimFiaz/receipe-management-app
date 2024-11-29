@@ -140,7 +140,7 @@ function AddRecipe() {
           )}
           <button
             type="submit"
-            className="bg-[#a16925] text-white  py-3 px-6 rounded-lg shadow hover:bg-indigo-700 transition duration-200 ease-in-out w-full"
+            className="bg-[#a16925] text-white  py-3 px-6 rounded-lg shadow hover:bg- transition duration-200 ease-in-out w-full"
           >
             Add Recipe
           </button>
