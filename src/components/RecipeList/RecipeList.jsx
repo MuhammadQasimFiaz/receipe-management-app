@@ -9,7 +9,7 @@ function RecipeList() {
   const [editRecipeId, setEditRecipeId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
-  const [editImage, setEditImage] = useState('');
+  const [editImage, setEditImage] = useState(null);
   const [editServing, setEditServing] = useState(0);
   const [editReadyIn, setEditReadyIn] = useState(0);
   const [editInstructions, setEditInstructions] = useState("");
@@ -81,7 +81,6 @@ function RecipeList() {
                       type="file"
                       accept="image/*"
                       className="w-full bg-gray-700 rounded border border-gray-600 text-gray-100 py-2 px-3 focus:ring-2 focus:ring-indigo-500"
-                      value={editImage}
                       onChange={handleImageChange}
                     />
                   </div>
