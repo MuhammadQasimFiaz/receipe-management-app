@@ -15,10 +15,6 @@ function RecipeList() {
   const [editInstructions, setEditInstructions] = useState("");
   const [editIngredients, setEditIngredients] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem("recipes", JSON.stringify(recipes));
-  }, [recipes]);
-
   const handleUpdate = (e) => {
     e.preventDefault();
     dispatch(

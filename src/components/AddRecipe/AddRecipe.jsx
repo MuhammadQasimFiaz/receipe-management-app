@@ -15,8 +15,11 @@ function AddRecipe() {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setImage(imageUrl);
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        setImage(reader.result); // Update the state with the Base64 URL
+      });
+      reader.readAsDataURL(file); // Convert the image to a Base64 URL
     }
   };
 
