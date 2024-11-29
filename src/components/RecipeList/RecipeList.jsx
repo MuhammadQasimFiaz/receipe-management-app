@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteRecipe, updateRecipe } from "../../features/recipe/recipeSlice";
 
@@ -14,11 +14,6 @@ function RecipeList() {
   const [editReadyIn, setEditReadyIn] = useState(0);
   const [editInstructions, setEditInstructions] = useState("");
   const [editIngredients, setEditIngredients] = useState("");
-
-  useEffect(() => {
-    console.log('Saving recipes to localStorage:', recipes);
-    localStorage.setItem("recipes", JSON.stringify(recipes));
-  }, [recipes]);
 
   const handleUpdate = (e) => {
     e.preventDefault();
