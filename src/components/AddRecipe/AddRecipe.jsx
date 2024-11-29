@@ -10,6 +10,7 @@ function AddRecipe() {
   const [inputreadyIn, setInputReadyIn] = useState(0);
   const [inputinstructions, setInputInstructions] = useState("");
   const [inputingredients, setInputIngredients] = useState("");
+  const [showPopup, setShowPopup] = useState(false)
   const dispatch = useDispatch();
 
   const handleImageChange = (e) => {
@@ -38,7 +39,13 @@ function AddRecipe() {
       setInputDescription("");
       setInputServings("");
       setInputReadyIn("");
-      setInputInstructions(""), setInputIngredients(""), setImage(null);
+      setInputInstructions("")
+      setInputIngredients("")
+      setImage(null)
+      setShowPopup(true)
+      setTimeout(() => {
+        setShowPopup(false)
+      }, 3000);
     }
   };
 
@@ -134,6 +141,11 @@ function AddRecipe() {
           >
             Add Recipe
           </button>
+          {showPopup &&
+            <div className="fixed bottom-4 right-4 bg-green-500 text-white py-2 px-4 rounded shadow-lg">
+              Recipe added successfully!
+            </div>
+          }
         </div>
       </form>
     </>
