@@ -9,8 +9,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from "./components/Home/Home.jsx";
-import AllRecipes from "./pages/AllRecipes.jsx";
-import AddRecipes from "./pages/AddRecipes";
 import RecipeList from "./components/RecipeList/RecipeList.jsx";
 import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
@@ -23,8 +21,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />} />
-      <Route path="recipes" element={<AllRecipes />} />
-      {/* <Route path="add-recipe" element={<AddRecipes />} /> */}
       <Route path="recipeList" element={<RecipeList />} />
       <Route path="get-recipe" element={<AIGeneratedRecipes />} />
       <Route path="addRecipe" element={<AddRecipe />} />
